@@ -1,0 +1,196 @@
+/* =========================================================
+   CÓMO LEER ESTE ARCHIVO
+
+   Cada bloque tiene esta forma:
+
+       selector {
+           propiedad: valor;
+       }
+
+   El selector dice A QUÉ elemento del HTML se aplica.
+   - h1        → todas las etiquetas <h1>
+   - .tarjeta  → todo lo que tenga class="tarjeta"
+   - #inicio   → lo que tenga id="inicio"
+   ========================================================= */
+
+
+/* ---------- GENERAL ---------- */
+
+/* El * afecta a TODOS los elementos: quita espacios por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Al hacer clic en el menú, la página se desliza suavemente */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #141210;   /* ✏️ Prueba otro color de fondo */
+    color: rgb(65, 119, 81);
+    line-height: 1.6;
+}
+
+/* Los títulos usan la fuente estilo póster */
+h1, h2, h3, .logo {
+    font-family: "Lato", sans-serif;
+}
+
+/* Las palabras dentro de <span> en los títulos van en rosa */
+h1 span, h2 span, .logo span {
+    color: #cfae92;              /* ✏️ Prueba cambiar este rosa */
+}
+
+a {
+    text-decoration: none;       /* quita el subrayado */
+}
+
+/* Cada sección tiene espacio arriba/abajo y no se pasa de 1100px */
+section {
+    padding: 75px 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 55px;
+    margin-bottom: 35px;
+}
+
+
+/* ---------- MENÚ ---------- */
+
+header {
+    position: sticky;            /* el menú se queda arriba al bajar */
+    top: 0;
+    background-color: #141210;
+    border-bottom: 1px solid #cfae92;
+
+    display: flex;               /* flex = poner elementos en una fila */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;             /* si no caben, pasan a otra línea */
+    gap: 20px;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+nav a {
+    color: rgb(65, 119, 81);
+    margin-left: 30px;
+}
+
+/* :hover = cuando el mouse está encima */
+nav a:hover {
+    color: #141210;
+}
+
+
+/* ---------- PORTADA ---------- */
+
+/* Este selector va solo, sin límite de ancho, para que el fondo llene la pantalla */
+.portada {
+    max-width: none;
+    padding: 120px 30px;
+
+    /* Capa oscura encima de la foto para que el texto se lea */
+    background: linear-gradient(rgba(66, 67, 70, 0.7), rgba(6, 8, 7, 0.7)),
+                url("img/portada.jpg");
+    background-size: cover;      /* la foto cubre todo el espacio */
+    background-position: center;
+}
+
+.portada h1 {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #cfae92;
+    color: rgb(65, 119, 81);
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+.boton:hover {
+    background-color: #141210;
+}
+
+
+/* ---------- TARJETAS DE PELÍCULAS ---------- */
+
+/* Flexbox pone las tarjetas en fila; flex-wrap las baja de línea si no caben */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    font-family: "Lato", sans-serif;
+    width: 320px;
+    background-color: #cfae92;
+    border: 1px solid rgb(65, 119, 81);
+    border-radius: 10px;
+    padding: 15px;
+   
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;           /* recorta la imagen sin deformarla */
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.tarjeta h3 {
+    font-size: 28px;
+     
+}
+
+.datos {
+    color: #141210;
+    font-size: 14px;
+    
+}
+
+/* Efecto al pasar el mouse: la tarjeta se levanta y cambia de borde */
+.tarjeta:hover {
+    border-color: #b19e8e;
+    transform: translateY(-6px);
+}
+
+
+/* ---------- LA DÉCADA ---------- */
+
+#decada p {
+    max-width: 650px;
+    color: #cfae92;
+}
+
+
+/* ---------- PIE DE PÁGINA ---------- */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(65, 119, 81);
+    color: #141210;
+}
